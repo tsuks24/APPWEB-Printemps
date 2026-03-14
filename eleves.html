@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section Élèves</title>
+
+<!-- Font Awesome pour les icônes -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background: linear-gradient(135deg,#74b9ff,#dfe6e9);
+    min-height: 100vh;
+}
+
+.container{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+header{
+    margin-top: 60px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1{
+    font-size: 36px;
+}
+
+header p{
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: white;
+    width: 230px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card i{
+    font-size: 40px;
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.card h2{
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+.card p{
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.back{
+    margin-top: 50px;
+}
+
+.back button{
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #2c3e50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.back button:hover{
+    background: #1a252f;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1><i class="fa-solid fa-user-graduate"></i> Section Élèves</h1>
+    <p>Gestion des informations des élèves</p>
+</header>
+
+<div class="menu">
+    <!-- Enregistrement élèves -->
+    <div class="card" onclick="openFormulaire()">
+        <i class="fa-solid fa-user-plus"></i>
+        <h2>Enregistrement</h2>
+        <p>Ajouter un élève</p>
+    </div>
+
+    <!-- BDD élèves -->
+    <div class="card" onclick="openBDD()">
+        <i class="fa-solid fa-database"></i>
+        <h2>BDD Élèves</h2>
+        <p>Voir la base de données</p>
+    </div>
+
+    <!-- Administration -->
+    <div class="card" onclick="openAdmin()">
+        <i class="fa-solid fa-gear"></i>
+        <h2>Administration</h2>
+        <p>Gestion administrative</p>
+    </div>
+</div>
+
+<!-- Bouton retour -->
+<div class="back">
+    <button onclick="goHome()">
+        <i class="fa-solid fa-arrow-left"></i> Retour accueil
+    </button>
+</div>
+
+</div>
+
+<script>
+function openFormulaire(){
+    // ouvre le formulaire Google Apps Script dans un nouvel onglet
+    window.open("https://script.google.com/macros/s/AKfycbwjTY1G-fBQc0imGse3gnQG6Mh8T1UWakXHUPyLoAo2ZigOzrZkrknK1buOcjhv_fjh2Q/exec", "_blank");
+}
+
+function openBDD(){
+    // ouvre le Google Sheet BDD élèves dans un nouvel onglet
+    window.open("https://docs.google.com/spreadsheets/d/1stPKgSdmb5yndVsvRIW4fIPIT1YTbInYUUtsALDJWkA/edit?gid=0", "_blank");
+}
+
+function openAdmin(){
+    window.location.href="administration_eleves.html";
+}
+
+function goHome(){
+    window.location.href="index.html";
+}
+</script>
+
+</body>
+</html>
+

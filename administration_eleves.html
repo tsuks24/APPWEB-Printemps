@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administration Élèves</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background: linear-gradient(135deg,#6a11cb,#2575fc); /* dégradé moderne violet/bleu */
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    text-align:center;
+}
+
+header{
+    margin-bottom:30px;
+    color:white;
+}
+
+header h1{
+    font-size:28px;
+}
+
+header p{
+    font-size:15px;
+    color:#f0f0f0;
+}
+
+.menu{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:200px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.25);
+}
+
+.card i{
+    font-size:32px;
+    color:#6a11cb; /* icône violet */
+    margin-bottom:10px;
+}
+
+.card h2{
+    margin:6px 0;
+    color:#2c3e50;
+    font-size:16px;
+}
+
+.card p{
+    color:#7f8c8d;
+    font-size:12px;
+}
+
+.back{
+    margin-top:30px;
+}
+
+.back button{
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    background:#2c3e50;
+    color:white;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.back button:hover{
+    background:#1a252f;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+<h1><i class="fa-solid fa-user-gear"></i> Administration Élèves</h1>
+<p>Gestion des informations administratives</p>
+</header>
+
+<div class="menu">
+
+<!-- Écolage -->
+<div class="card" onclick="openEcolage()">
+<i class="fa-solid fa-school"></i>
+<h2>Archives</h2>
+<p>Suivi des dossiers Archives</p>
+</div>
+
+<!-- Absences et Retards -->
+<div class="card" onclick="openAbsences()">
+<i class="fa-solid fa-calendar-xmark"></i>
+<h2>Absences & Retards</h2>
+<p>Suivi des absences et retards</p>
+</div>
+
+<!-- Notes -->
+<div class="card" onclick="openNotes()">
+<i class="fa-solid fa-graduation-cap"></i>
+<h2>Notes</h2>
+<p>Consulter les notes des élèves</p>
+</div>
+
+</div>
+
+<div class="back">
+<button onclick="goBack()">
+<i class="fa-solid fa-arrow-left"></i> Retour Élèves
+</button>
+</div>
+
+</div>
+
+<script>
+function openEcolage(){
+    window.open(
+      "ICI https fichier a ouvrir",
+      "_blank"
+    );
+}
+
+function openAbsences(){
+    window.open(
+      "ICI https fichier a ouvrir",
+      "_blank"
+    );
+}
+
+function openNotes(){
+    window.open(
+      "https://docs.google.com/spreadsheets/d/1TlfmZFvbBEMkm4zE_oTcDBrBvJpCDEZMKQKpULJGrrA/edit?gid=2027661473",
+      "_blank"
+    );
+}
+
+function goBack(){
+    window.location.href="eleves.html";
+}
+</script>
+
+</body>
+</html>

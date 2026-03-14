@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section Finance</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background: linear-gradient(135deg,#ff4e50,#f9d423); /* dégradé rouge/orange */
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    text-align:center;
+}
+
+header{
+    margin-bottom:30px;
+    color:white;
+}
+
+header h1{
+    font-size:28px;
+}
+
+header p{
+    font-size:15px;
+    color:#fff0f0;
+}
+
+.menu{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:200px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.25);
+}
+
+.card i{
+    font-size:32px;
+    color:#d32f2f; /* icône rouge */
+    margin-bottom:10px;
+}
+
+.card h2{
+    margin:6px 0;
+    color:#d32f2f; /* titre rouge */
+    font-size:16px;
+}
+
+.card p{
+    color:#7f8c8d;
+    font-size:12px;
+}
+
+.back{
+    margin-top:30px;
+}
+
+.back button{
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    background:#b71c1c;
+    color:white;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.back button:hover{
+    background:#7f0000;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+<h1><i class="fa-solid fa-money-bill-wave"></i> Section Finance</h1>
+<p>Gestion des paiements et finances</p>
+</header>
+
+<div class="menu">
+
+<!-- Enregistrement Paiements -->
+<div class="card" onclick="openPaiements()">
+<i class="fa-solid fa-file-invoice-dollar"></i>
+<h2>Paiements</h2>
+<p>Ajouter un paiement</p>
+</div>
+
+<!-- Journal -->
+<div class="card" onclick="openJournal()">
+<i class="fa-solid fa-book"></i>
+<h2>Journal</h2>
+<p>Voir le journal des transactions</p>
+</div>
+
+<!-- Tableau de bord -->
+<div class="card" onclick="openDashboard()">
+<i class="fa-solid fa-chart-line"></i>
+<h2>Tableau de bord</h2>
+<p>Analyse financière</p>
+</div>
+
+<!-- Suivie des États -->
+<div class="card" onclick="openEtat()">
+<i class="fa-solid fa-chart-pie"></i>
+<h2>Suivie des états</h2>
+<p>États financiers</p>
+</div>
+
+</div>
+
+<div class="back">
+<button onclick="goHome()">
+<i class="fa-solid fa-arrow-left"></i> Retour accueil
+</button>
+</div>
+
+<script>
+function openPaiements(){
+    window.open("https://script.google.com/macros/s/AKfycbzwbOJ2aBQcsmJaZs_9WvQhWqc7-Iqsq6w2xAL72PLgpDatfIyvyv5cQURP0-Zh_bJT/exec","_blank");
+}
+
+function openJournal(){
+    window.open("https://docs.google.com/spreadsheets/d/1oHmaGW6FT8_dBpT51AR8_GVcRS6RO5kyTCoSiSB1d0s/edit?gid=0","_blank");
+}
+
+function openDashboard(){
+    let pwd = prompt("Veuillez entrer le mot de passe pour accéder au Tableau de bord :");
+    if(pwd === "admin"){
+        window.open("https://docs.google.com/spreadsheets/d/1rubEkH2cjDNcYoB2WwofvXmfJdBskdEHGXqzP5M3fKA/edit?gid=0","_blank");
+    } else if(pwd !== null){
+        alert("Mot de passe incorrect !");
+    }
+}
+
+function openEtat(){
+    window.location.href="etat.html";
+}
+
+function goHome(){
+    window.location.href="index.html";
+}
+</script>
+
+</div>
+</body>
+</html>

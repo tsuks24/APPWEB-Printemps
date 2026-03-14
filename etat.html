@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suivie des États</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background: linear-gradient(135deg,#ffeb3b,#fff176,#fff59d);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  width:90%;
+  max-width:900px;
+  text-align:center;
+}
+
+header{
+  margin-bottom:30px;
+  color:white;
+}
+
+header h1{
+  font-size:28px;
+}
+
+header p{
+  color:#2c3e50;
+  font-size:15px;
+}
+
+/* Boutons sur une ligne */
+.menu{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:white;
+  width:200px;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.15);
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.25);
+}
+
+.card i{
+  font-size:35px;
+  color:#fbc02d;
+  margin-bottom:10px;
+}
+
+.card h2{
+  font-size:17px;
+  margin:5px 0;
+  color:#2c3e50;
+}
+
+.card p{
+  font-size:13px;
+  color:#7f8c8d;
+}
+
+.back{
+  margin-top:30px;
+}
+
+.back button{
+  padding:10px 20px;
+  border:none;
+  border-radius:6px;
+  background:#2c3e50;
+  color:white;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.back button:hover{
+  background:#1a252f;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+<h1><i class="fa-solid fa-chart-pie"></i> Suivie des États</h1>
+<p>Consulter les situations financières</p>
+</header>
+
+<div class="menu">
+
+<!-- Situation Écolage -->
+<div class="card" onclick="openEcolage()">
+<i class="fa-solid fa-school"></i>
+<h2>Situation Écolage</h2>
+<p>État des paiements scolaires</p>
+</div>
+
+<!-- Situation Parking -->
+<div class="card" onclick="openParking()">
+<i class="fa-solid fa-car"></i>
+<h2>Situation Parking</h2>
+<p>État des paiements de parking</p>
+</div>
+
+<!-- Suivie Paiement Salaires -->
+<div class="card" onclick="openSalaires()">
+<i class="fa-solid fa-hand-holding-dollar"></i>
+<h2>Suivie Paiement Salaires</h2>
+<p>État des paiements de salaires</p>
+</div>
+
+</div>
+
+<div class="back">
+<button onclick="goBack()">
+<i class="fa-solid fa-arrow-left"></i> Retour Finance
+</button>
+</div>
+
+</div>
+
+<script>
+function openEcolage(){
+  window.open(
+    "https://docs.google.com/spreadsheets/d/1KoQRfZpyDJSSlUTcyhzraJVdLlMFIKKNThMkcB543MU/edit?gid=434758609",
+    "_blank"
+  );
+}
+
+function openParking(){
+  window.open(
+    "https://docs.google.com/spreadsheets/d/177zwwxc1nOmUFmxsEDAmNvQ3cmfC6lPpGJTtk6Tuip4/edit?gid=0",
+    "_blank"
+  );
+}
+
+function openSalaires(){
+  let pwd = prompt("Veuillez entrer le mot de passe pour accéder au Suivie Paiement Salaires :");
+  if(pwd === "admin"){
+    window.open(
+      "https://docs.google.com/spreadsheets/d/1rubEkH2cjDNcYoB2WwofvXmfJdBskdEHGXqzP5M3fKA/edit?gid=623509315",
+      "_blank"
+    );
+  } else if(pwd !== null) {
+    alert("Mot de passe incorrect !");
+  }
+}
+
+function goBack(){
+  window.location.href="finance.html";
+}
+</script>
+
+</body>
+</html>

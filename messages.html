@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Messages</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.container{
+text-align:center;
+}
+
+h1{
+color:white;
+margin-bottom:40px;
+}
+
+.menu{
+display:flex;
+gap:30px;
+}
+
+/* boutons */
+
+.card{
+background:white;
+width:220px;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+cursor:pointer;
+transition:0.3s;
+position:relative;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card i{
+font-size:40px;
+color:#667eea;
+margin-bottom:10px;
+}
+
+.card h2{
+margin:5px;
+}
+
+/* notification */
+
+#notif{
+position:absolute;
+top:10px;
+right:15px;
+width:12px;
+height:12px;
+background:red;
+border-radius:50%;
+display:none;
+}
+
+/* bouton retour */
+
+.back{
+margin-top:40px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1><i class="fa-solid fa-comments"></i> Messages</h1>
+
+<div class="menu">
+
+<!-- Nouveau message -->
+
+<div class="card" onclick="nouveauMessage()">
+
+<i class="fa-solid fa-pen"></i>
+
+<h2>Nouveau message</h2>
+
+<p>Envoyer message</p>
+
+</div>
+
+
+<!-- Voir messages -->
+
+<div class="card" onclick="voirMessages()">
+
+<span id="notif"></span>
+
+<i class="fa-solid fa-envelope-open"></i>
+
+<h2>Voir messages</h2>
+
+<p>Consulter messages</p>
+
+</div>
+
+</div>
+
+
+<div class="back">
+
+<button onclick="retourAccueil()">
+<i class="fa-solid fa-arrow-left"></i>
+Retour accueil
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+let lastCount = 0;
+
+/* vérifier nouveaux messages */
+
+function checkMessages(){
+
+google.script.run.withSuccessHandler(function(count){
+
+if(lastCount > 0 && count > lastCount){
+document.getElementById("notif").style.display="block";
+}
+
+lastCount = count;
+
+}).nombreMessages();
+
+}
+
+setInterval(checkMessages,10000);
+checkMessages();
+
+/* ouvrir google sheet */
+
+function voirMessages(){
+
+document.getElementById("notif").style.display="none";
+
+window.open(
+"https://docs.google.com/spreadsheets/d/1HSUj0K-DlpCXQuoWInUv2pX_6sIAS_vuuAcSWlr4UJY/edit?gid=0",
+"_blank"
+);
+
+}
+
+/* ouvrir formulaire message */
+
+function nouveauMessage(){
+
+window.open(
+"https://script.google.com/macros/s/AKfycbzlePNM9JhGS1nxS2h1MqsNAyhuJ42_LMtLEtaYqdjgDWz9ZBS0A8OrbI2QFunvF49yEA/exec",
+"_blank"
+);
+
+}
+
+/* retour accueil */
+
+function retourAccueil(){
+
+window.location.href="index.html";
+
+}
+
+</script>
+
+</body>
+</html>

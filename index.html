@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Application École</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+height:100vh;
+overflow:hidden;
+
+/* fond moderne */
+background: linear-gradient(135deg,#667eea,#764ba2);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+/* formes décoratives */
+
+body::before{
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+background:rgba(255,255,255,0.15);
+border-radius:50%;
+top:-100px;
+right:-100px;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:300px;
+height:300px;
+background:rgba(255,255,255,0.1);
+border-radius:50%;
+bottom:-80px;
+left:-80px;
+}
+
+/* titre */
+
+.top-title{
+position:absolute;
+top:20px;
+left:30px;
+font-size:28px;
+color:white;
+font-weight:bold;
+}
+
+/* conteneur */
+
+.container{
+width:90%;
+max-width:900px;
+text-align:center;
+z-index:2;
+}
+
+header{
+margin-bottom:40px;
+}
+
+header h1{
+font-size:36px;
+color:white;
+}
+
+header p{
+color:#e0e6ff;
+}
+
+/* menu */
+
+.menu{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+justify-items:center;
+}
+
+/* boutons */
+
+.card{
+
+background:white;
+width:230px;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+cursor:pointer;
+transition:0.3s;
+
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+
+.card i{
+font-size:40px;
+color:#667eea;
+margin-bottom:15px;
+}
+
+.card h2{
+margin:10px 0;
+color:#2c3e50;
+}
+
+.card p{
+color:#7f8c8d;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="top-title">
+École Privée Le Printemps
+</div>
+
+<div class="container">
+
+<header>
+
+<h1><i class="fa-solid fa-school"></i> Gestion École</h1>
+<p>Système de gestion scolaire</p>
+
+</header>
+
+<div class="menu">
+
+<div class="card" onclick="openEleves()">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<h2>Élèves</h2>
+
+<p>Gestion des élèves</p>
+
+</div>
+
+
+<div class="card" onclick="openEnseignants()">
+
+<i class="fa-solid fa-chalkboard-user"></i>
+
+<h2>Personnels</h2>
+
+<p>Gestion des personnels</p>
+
+</div>
+
+
+<div class="card" onclick="openFinance()">
+
+<i class="fa-solid fa-money-bill-wave"></i>
+
+<h2>Finance</h2>
+
+<p>Gestion financière</p>
+
+</div>
+
+
+<div class="card" onclick="openMessages()">
+
+<i class="fa-solid fa-comments"></i>
+
+<h2>Messages</h2>
+
+<p>Messagerie interne</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openEleves(){
+window.location.href="eleves.html"
+}
+
+function openEnseignants(){
+window.location.href="enseignants.html"
+}
+
+function openFinance(){
+window.location.href="finance.html"
+}
+
+function openMessages(){
+window.location.href="messages.html"
+}
+
+</script>
+
+</body>
+</html>

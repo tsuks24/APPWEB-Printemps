@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Section Enseignants</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background: linear-gradient(135deg,#6a11cb,#8e44ad,#c471ed);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+text-align:center;
+width:900px;
+}
+
+h1{
+color:white;
+margin-bottom:40px;
+}
+
+.menu{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+width:260px;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.card i{
+font-size:45px;
+color:#8e44ad;
+margin-bottom:15px;
+}
+
+.card h2{
+margin:10px 0;
+color:#2c3e50;
+}
+
+.card p{
+color:#7f8c8d;
+font-size:14px;
+}
+
+.back{
+margin-top:50px;
+}
+
+.back button{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+background:#2c3e50;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.back button:hover{
+background:#1a252f;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1><i class="fa-solid fa-chalkboard-user"></i> Section Personnels</h1>
+
+<div class="menu">
+
+<div class="card" onclick="openForm()">
+<i class="fa-solid fa-user-plus"></i>
+<h2>Enregistrement</h2>
+<p>Ajouter un nouvel personnel</p>
+</div>
+
+<div class="card" onclick="openBDD()">
+<i class="fa-solid fa-database"></i>
+<h2>BDD Personnels</h2>
+<p>Consulter la base de données</p>
+</div>
+
+</div>
+
+<div class="back">
+<button onclick="goHome()">
+<i class="fa-solid fa-arrow-left"></i> Retour accueil
+</button>
+</div>
+
+</div>
+
+<script>
+
+function openForm(){
+window.open("https://script.google.com/macros/s/AKfycbxxU1ac9KxLY9tl0lAF45EN1KVmXsoJbOJJtXsBHDkCKNyrBjR3Bk4bpsnmLaW_sEch2w/exec","_blank");
+}
+
+function openBDD(){
+window.open("https://docs.google.com/spreadsheets/d/1IB_sJZHbUT9VOP4R-Hp9b_hQpFOfRtIIkEiTxfGRjF4/edit?gid=0","_blank");
+}
+
+function goHome(){
+window.location.href="index.html";
+}
+
+</script>
+
+</body>
+</html>
